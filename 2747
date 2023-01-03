@@ -1,0 +1,11 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int a;
+int fibo[45]={0,1,};
+int main(){
+    cin >> a;
+    for(int i=2;i<=a;i++) fibo[i]=fibo[i-1]+fibo[i-2];
+    cout << fibo[a] << endl;
+}
