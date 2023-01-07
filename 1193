@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int a;
+int main(){
+    cin >> a;
+    int x=0;
+    int y=0;
+    while(x < a){
+        y++;
+        x += y;
+    }
+    int d;
+    int div;
+    int divis;
+    d = x - a;
+    if(y%2){
+        div=1+d;
+        divis=y-d;
+    }
+    else{
+        div=y-d;
+        divis=1+d;
+    }
+    cout << div << "/" << divis;
+}
