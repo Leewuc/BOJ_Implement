@@ -1,0 +1,9 @@
+#include <iostream>
+using namespace std;
+int ncr[11] = {1,};
+int main(){
+    int a,b;
+    cin >> a >> b;
+    for(int i=1;i<=10;i++) ncr[i] = i*ncr[i-1];
+    cout << ncr[a]/(ncr[a-b]*ncr[b]);
+}
