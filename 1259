@@ -1,0 +1,19 @@
+#include <iostream>
+#include <string>
+using namespace std;
+string pel;
+int main(){
+    while(true){
+    cin >> pel;
+    if(pel == "0") break;
+    bool real = true;
+    for(int i = 0; i < pel.size()/2; i++){
+            if(pel[i] != pel[pel.size()-i-1]){
+                real = false;
+                break;
+            }
+        }
+    if(real) cout << "yes" << endl;
+    else cout << "no" << endl;
+    }
+}
