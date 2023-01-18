@@ -1,0 +1,19 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main(){
+    string prom[51];
+    int a;
+    cin >> a;
+    for(int i=0;i<a;i++) cin >> prom[i];
+    for(int i=0;i<prom[0].length();i++){
+        for(int j=1;j<a;j++){
+            if(prom[0][i] != prom[j][i]){
+                prom[0][i]= '?';
+                break;
+            }
+        }
+        cout << prom[0][i];
+    }
+    cout << endl;
+}
