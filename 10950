@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+int a,b,c;
+int main(){
+    cin >> a;
+    int p[a];
+ 
+    for(int i=0;i<a;i++){
+       cin >> b >> c;
+       p[i] = b+c;
+       cout << p[i] << endl;
+    }
+}
