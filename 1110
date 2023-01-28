@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+	int input;
+	scanf("%d", &input);
+
+	int cnt = 0;
+	int n = input;
+	
+	do {
+		n = (n % 10) * 10 + (n / 10 + n % 10) % 10;
+		++cnt;
+	} while (n != input);
+
+	printf("%d\n", cnt);
+  }
