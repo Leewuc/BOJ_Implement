@@ -1,0 +1,24 @@
+#include <iostream>
+#include <algorithm>
+#include <vector>
+
+using namespace std;
+int a= 0;
+int n = 0;
+vector<int> arr;
+int main()
+{
+	cin >> a;
+	for (int i = 0; i < a;i++)
+	{
+		cin >> n;
+		arr.push_back(n);
+	}
+
+	sort(arr.begin(), arr.end());
+
+	for (auto i : arr)
+	{
+		cout << i << "\n";
+	}
+}
