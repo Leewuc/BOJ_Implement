@@ -1,0 +1,20 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+void han(int n,int s, int m, int f){
+    if(n == 1){
+        cout << s << " " << f << '\n';
+    }
+    else {
+        han(n-1,s,f,m);
+        cout << s << " " << f << '\n';
+        han(n-1,m,s,f);
+    }
+}
+int main(){
+    int n;
+    cin >> n;
+    cout << (1<<n)-1 << '\n';
+    han(n,1,2,3);
+    return 0;
+}
