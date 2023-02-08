@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+int w,h,x,y;
+int main(){
+    int a,b,out;
+    cin >> x >> y >> w >> h;
+    a = x < w -x ? x : w- x;
+    b = y < h - y ? y : h - y;
+    out = a < b ? a : b;
+    cout << out;
+}
