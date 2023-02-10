@@ -1,0 +1,6 @@
+#include <stdio.h>
+char n;
+int main() {
+	scanf("%c", &n);
+	printf("%d\n", n);
+}
