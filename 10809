@@ -1,0 +1,9 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+int main(){
+    int a[26] = {0,};
+    string b;
+    cin >> b;
+    for(char i='a';i<='z';i++) cout << (int)b.find(i) << ' ';
+}
