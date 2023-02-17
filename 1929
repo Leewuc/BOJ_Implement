@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+int n,m;
+int main(){
+    cin >> m >> n;
+    bool arr[100001] = {false};
+    for(int i=2;i<=n;i++){
+        if(arr[i] == true) continue;
+        for(int j=2*i;i<=n;j+=i){
+            if(arr[j] == false) arr[j] = true;
+        }
+    }
+    for(int i=m;i<=n;i++){
+        if(!arr[i] && i!= 1) cout << i << '\n';
+    }
+    return 0;
+}
