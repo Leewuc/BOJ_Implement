@@ -1,0 +1,14 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+int main() {
+	vector<int> n(5);
+	int sum = 0;
+	for (auto &k : n) {
+		cin >> k;
+		sum += k;
+	}
+	sort(n.begin(), n.end());
+	cout << sum / 5 << "\n" << n[2] << "\n";
+}
