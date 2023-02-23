@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+#define max 1000000
+#define min -1000000
+int main(){
+    int n;
+    int a;
+    cin >> n;
+    for(int i=0;i<n;i++){
+        cin >> a;
+        if(a < min) min = a;
+        if(a > max) max = a;
+    }
+    cout << min << ' ' << max << '\n';
+}
