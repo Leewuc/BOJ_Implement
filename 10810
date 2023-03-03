@@ -1,0 +1,22 @@
+#include <iostream>
+#include <algorithm>
+#include <string.h>
+using namespace std;
+
+int n,m;
+int x,y,z;
+int main(){
+    int ball[110];
+    cin >> n >> m;
+    memset(ball,0,sizeof(ball));
+    while(m--){
+        cin >> x >> y >> z;
+        for(int i=x;i<=y;i++){
+            ball[i] = z;
+        }
+    }
+    for(int i=1;i<=n;i++){
+        cout << ball[i] << " ";
+    }
+    cout << '\n';
+}
