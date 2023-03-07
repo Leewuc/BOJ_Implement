@@ -1,0 +1,18 @@
+#include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
+int n,m;
+int main(){
+    cin >> n >> m;
+    int *ball = new int[n+1];
+    for(int i=1;i<=n;i++){
+        ball[i] = i;
+    }
+    int x,y;
+    while(m--){
+        cin >> x >> y;
+        swap(ball[x],ball[y]);
+    }
+    for(int i=1;i<=n;i++) cout << ball[i] << " ";
+}
