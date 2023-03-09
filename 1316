@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+int n;
+int main(){
+    cin >> n;
+    int x[26] = {0,};
+    char group[101];
+    int last = 0;
+    
+    for(int i=0;i<n;i++){
+        cin >> group;
+        for(int j=0;j<26;j++){
+            x[j] = 0;
+        }
+        int key = 1;
+        int pass = 1;
+        while(group[key]){
+            if(x[group[key] - 'a']){
+                pass = 0;
+                 break;
+            }
+            if(group[key] != group[key - 1]){
+                ++x[group[key - 1] - 'a'];
+            }
+            key++;
+        }
+        last += pass;
+    }
+    cout << last << '\n';
+}
