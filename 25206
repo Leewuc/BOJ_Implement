@@ -1,0 +1,36 @@
+#include <iostream>
+#include <cstring>
+#include <vector>
+#include <sstream>
+using namespace std;
+int main(){
+    double sum = 0;
+    double last = 0;
+    string score;
+    string word;
+    for(int i=0;i<20;i++){
+        getline(cin,score);
+        istringstream s(score);
+        vector<string> result;
+        while(getline(s,word,' ')) result.push_back(word);
+        double subscore = stod(result[1]);
+        last += subscore;
+        string everage = result[2];
+        if(everage == "P"){
+            last -= subscore;
+            continue;
+        }
+        else if(everage == "A+") sum += (subscore * 4.5);
+        else if(everage == "A0") sum += (subscore * 4.0);
+        else if(everage == "B+") sum += (subscore * 3.5);
+        else if(everage == "B0") sum += (subscore * 3.0);
+        else if(everage == "C+") sum += (subscore * 2.5);
+        else if(everage == "C0") sum += (subscore * 2.0);
+        else if(everage == "D+") sum += (subscore * 1.5);
+        else if(everage == "D0") sum += (subscore * 1.0);
+        else if(everage == "F") sum += (subscore * 0.0);
+    }
+    cout <<fixed;
+    cout.precision(6);
+    cout << sum/last;
+}
