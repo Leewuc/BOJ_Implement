@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+int n;
+int main(){
+    cin >> n;
+    int m;
+    int x[1000];
+    int ave = 0;
+    double ans;
+    for(int i=0;i<n;i++){
+        cin >> m;
+        int sum = 0;
+        double cnt = 0;
+        for(int j=0;j<m;j++){
+            cin >> x[j];
+            sum += x[j];
+        }
+        ave = sum/m;
+        for(int k = 0; k<m;k++){
+            if(ave < x[k]) cnt ++;
+        }
+        ans = (cnt/m) * 100;
+        cout.precision(3);
+        cout << fixed;
+        cout << ans << "%" << '\n';
+    }
+}
