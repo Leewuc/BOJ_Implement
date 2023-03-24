@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    char s[16][5];
+    string n;
+    for(int i=0;i<5;i++){
+        cin >> n;
+        for(int j=0;j<n.size();j++){
+            s[j][i] = n[j];
+        }
+    }
+    for(int i=0;i<15;i++){
+        for(int j=0;j<5;j++){
+            if(s[i][j] == '\0') continue;
+            cout << s[i][j];
+        }
+    }
+}
