@@ -1,0 +1,7 @@
+#include <iostream>
+#include <string>
+using namespace std;
+string n;
+int main(){
+    while(getline(cin,n)) cout << n << '\n';
+}
