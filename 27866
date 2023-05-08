@@ -1,0 +1,9 @@
+#include <iostream>
+#include <string>
+using namespace std;
+char n[1001];
+int m;
+int main(){
+    cin >> n >> m;
+    cout << n[m-1];
+}
