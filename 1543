@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    string d,w;
+    int cnt = 0;
+    getline(cin,d);
+    getline(cin,w);
+    if(d.length() < w.length()){
+        cout << 0 << '\n';
+    }
+    else{
+        for(int i=0;i<=d.length()-w.length();i++){
+            if(d.substr(i,w.length()) == w){
+                cnt++;
+                i += (w.length()-1);
+            }
+        }
+        cout << cnt << '\n';
+    }
+    return 0;
+}
