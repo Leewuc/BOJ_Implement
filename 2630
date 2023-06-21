@@ -1,0 +1,45 @@
+#include <iostream>
+#include <string.h>
+using namespace std;
+int map[129][129];
+int n;
+int xcnt = 0;
+int ycnt = 0;
+int acnt = 0;
+void mmap(int x, int y, int a){
+    for(int i=x;i<x+a;i++){
+        for(int j=y;j<y+a;j++){
+            if(map[i][j]){
+                acnt++;
+            }
+        }
+    }
+    if(!acnt){
+        xcnt++;
+    }
+    else if(acnt == a*a){
+        ycnt++;
+    }
+    else{
+        mmap(x,y,a/2);
+        mmap(x,y+a/2,a/2);
+        mmap(x+a/2,y,a/2);
+        mmap(x+a/2,y+a/2,a/2);
+    }
+    return;
+}
+int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    cin >> n;
+    memset(map,0,sizeof(map));
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            cin >> map[i][j];
+        }
+    }
+    mmap(0,0,n);
+    cout << xcnt << '\n' << ycnt << '\n';
+    return 0;
+}
