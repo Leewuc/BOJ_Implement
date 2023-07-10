@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+int n,m,k;
+int summ[1025][1025];
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    cin >> n >> m;
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            cin >> k;
+            summ[i+1][j+1] = summ[i+1][j]+summ[i][j+1] - summ[i][j]+k;
+        }
+    }
+    for(int i=0;i<m;i++){
+        int x1,x2,y1,y2;
+        cin >> x1 >> x2 >> y1 >> y2;
+        int ans = summ[y1][y2] - summ[x1-1][y2] - summ[y1][x2-1] + summ[x1-1][x2-1];
+        cout << ans << '\n';
+    }
+    return 0;
+}
