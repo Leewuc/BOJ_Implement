@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    int n,m,k;
+    cin >> n >> m >> k;
+    int snail;
+    if((k-n)%(n-m)==0){
+        snail = (k-n)/(n-m)+1;
+    }
+    else{
+        snail = (k-n)/(n-m)+2;
+    }
+    cout << snail << '\n';
+}
