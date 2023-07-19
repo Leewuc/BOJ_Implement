@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+long long n,m,k;
+long long quad(long long n,long long m){
+    if(m == 1){
+        return n % k;
+    }
+    long long a = quad(n,m/2);
+    a = (a*a)%k;
+    if(m%2){
+        a = (a*n)%k;
+    }
+    return a;
+}
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    cin >> n >> m >> k;
+    cout << quad(n,m);
+    return 0;
+}
